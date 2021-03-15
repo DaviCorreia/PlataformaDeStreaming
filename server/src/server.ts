@@ -1,16 +1,11 @@
 import express from 'express';
 
 const app = express();
+app.use(express.json());
 
-app.get('/users',(request,response)=>{
-
-    const users = [
-        {name:'Davi', age: 27},
-        {name:'Davi', age: 27},
-        {name:'Davi', age: 27},
-        {name:'Davi', age: 27},
-    ];
-    return response.json(users);
+app.get('/',(request,response)=>{
+    
+    return response.json({message: 'Hello'});
     //console.log('Acessou a rota')
 });
 
